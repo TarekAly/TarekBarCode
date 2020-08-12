@@ -18,6 +18,16 @@
 
 
   <script>
+  window.addEventListener("load", function(){
+      
+      navigator.clipboard.readText()
+    .then(clipText => {
+        alert('gg');
+     alert(clipText);
+      
+    });
+      
+     });
 
 function myPaste() {
   navigator.clipboard.readText()
