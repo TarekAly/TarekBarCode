@@ -20,7 +20,6 @@
 
   <script>
   window.addEventListener("load", function(){
-      
       navigator.clipboard.readText()
     .then(clipText => {
        // alert('gg');
@@ -38,8 +37,7 @@
 function myPaste() {
      
   navigator.clipboard.readText()
-     
-    .then(clipText => {
+     .then(clipText => {
       //  alert('gg');
      //alert(clipText);
         document.getElementById("myInput").value = clipText;
