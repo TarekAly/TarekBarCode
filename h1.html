@@ -51,7 +51,9 @@ function myPaste() {
   var expires = "expires=" + d.toGMTString();
   //document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   document.cookie = cname + "=" +           document.getElementById("myInput").value + ";" + expires + ";path=/"; 
-            document.getElementById("myInput2").value = getCookie("username");
+            var user=getCookie("username");
+            document.getElementById("myInput2").value = user;
+            alert("Welcome again " + user);
 }
 
 function getCookie(cname) {
@@ -74,7 +76,7 @@ function checkCookie() {
      setCookie("username", "0", 30);
   var user=getCookie("username");
   if (user != "") {
-    alert("Welcome again " + user);
+    //alert("Welcome again " + user);
   } else {
      user = "0"; //prompt("Please enter your name:","");
      if (user != "" && user != null) {
