@@ -51,6 +51,7 @@ function myPaste() {
   var expires = "expires=" + d.toGMTString();
   //document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   document.cookie = cname + "=" +           document.getElementById("myInput").value + ";" + expires + ";path=/"; 
+            document.getElementById("myInput2").value = getCookie("username");
 }
 
 function getCookie(cname) {
