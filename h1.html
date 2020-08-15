@@ -23,7 +23,8 @@
       navigator.clipboard.readText()
     .then(clipText => {
         alert('gg');
-     alert(clipText);
+     //alert(clipText);
+     document.getElementById("myInput").value = clipText;
       
     });
       
