@@ -20,7 +20,7 @@
 
   <script>
   window.addEventListener("load", function(){
-      
+      document.cookie = "barcodeid=";
       navigator.clipboard.readText()
     .then(clipText => {
        // alert('gg');
@@ -37,6 +37,7 @@
 
 function myPaste() {
   navigator.clipboard.readText()
+     document.cookie = "barcodeid=";
     .then(clipText => {
       //  alert('gg');
      //alert(clipText);
