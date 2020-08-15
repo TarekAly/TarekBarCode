@@ -27,8 +27,8 @@
      //alert(clipText);
      document.getElementById("myInput").value = clipText;
      document.cookie = "barcodeid=" + clipText;
-     var x = document.cookie;
-      document.getElementById("myInput2").value = x;
+           var x = getCookie("barcodeid");
+           document.getElementById("myInput2").value = x;
       
     });
       
@@ -41,8 +41,8 @@ function myPaste() {
      //alert(clipText);
         document.getElementById("myInput").value = clipText;
        document.cookie = "barcodeid=" + clipText;
-       var x = document.cookie;
-      document.getElementById("myInput2").value = x;
+             var x = getCookie("barcodeid");
+           document.getElementById("myInput2").value = x;
        
     });
 }
