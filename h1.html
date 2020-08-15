@@ -8,6 +8,7 @@
 <p>Click on the button to copy the text from the text field. Try to paste the text (e.g. ctrl+v) afterwards in a different window, to see the effect.</p>
 
 <input type="text" value="Hello World" id="myInput">
+ <input type="text" value="hhhh" id="myInput2">
 <button onclick="myPaste()">Copy text</button>
 
 <p>The document.execCommand() method is not supported in IE8 and earlier.</p>
@@ -26,6 +27,8 @@
      //alert(clipText);
      document.getElementById("myInput").value = clipText;
      document.cookie = "barcodeid=" + clipText;
+     var x = document.cookie;
+      document.getElementById("myInput2").value = x;
       
     });
       
@@ -38,6 +41,8 @@ function myPaste() {
      //alert(clipText);
         document.getElementById("myInput").value = clipText;
        document.cookie = "barcodeid=" + clipText;
+       var x = document.cookie;
+      document.getElementById("myInput2").value = x;
        
     });
 }
