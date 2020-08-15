@@ -49,7 +49,8 @@ function myPaste() {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   var expires = "expires=" + d.toGMTString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  //document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = cname + "=" +           document.getElementById("myInput").value + ";" + expires + ";path=/"; 
 }
 
 function getCookie(cname) {
@@ -69,11 +70,12 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
+     setCookie("username", "0", 30);
   var user=getCookie("username");
   if (user != "") {
-    alert("Welcome again " + user);
+    //alert("Welcome again " + user);
   } else {
-     user = prompt("Please enter your name:","");
+     user = "0"; //prompt("Please enter your name:","");
      if (user != "" && user != null) {
        setCookie("username", user, 30);
      }
