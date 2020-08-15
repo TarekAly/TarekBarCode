@@ -20,13 +20,13 @@
 
   <script>
   window.addEventListener("load", function(){
-      document.cookie = "barcodeid=";
+      
       navigator.clipboard.readText()
     .then(clipText => {
        // alert('gg');
      //alert(clipText);
      document.getElementById("myInput").value = clipText;
-           setCookie("barcodeid", clipText, 365);
+           document.cookie = "barcodeid=" + clipText;
      
            var x = getCookie("barcodeid");
            document.getElementById("myInput2").value = x;
@@ -36,13 +36,14 @@
      });
 
 function myPaste() {
+     
   navigator.clipboard.readText()
-     document.cookie = "barcodeid=";
+     
     .then(clipText => {
       //  alert('gg');
      //alert(clipText);
         document.getElementById("myInput").value = clipText;
-       setCookie("barcodeid", clipText, 365);
+         document.cookie = "barcodeid=" + clipText;
      
            var x = getCookie("barcodeid");
            document.getElementById("myInput2").value = x;
