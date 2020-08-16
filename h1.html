@@ -1,45 +1,21 @@
-<!DOCTYPE html>
-<html>
 <head>
-     <script type="text/javascript" src="js2.js"></script>
+<title>Acknowledgement</title>
 </head>
 <body>
+<script>
 
-<p>Click on the button to copy the text from the text field. Try to paste the text (e.g. ctrl+v) afterwards in a different window, to see the effect.</p>
+///////////////
+navigator.clipboard.readText()
+    .then(clipText => {
+     value1 = clipText;
+     var value2="";  
+    
+     
+      var queryString = "?para1=" + value1 + "&para2=" + value2;
+   window.location.href = "page2.html" + queryString;
+    });
+///////////////
 
-<input type="text" value="Hello World" id="myInput">
- <input type="text" value="hhhh" id="myInput2">
-<button onclick="myPaste()">Copy text</button>
-
-<p>The document.execCommand() method is not supported in IE8 and earlier.</p>
-
-
+</script> 
 </body>
 </html>
-
-
-  <script>
-  window.addEventListener("load", function(){
-      navigator.clipboard.readText()
-    .then(clipText => {
-       // alert('gg');
-     //alert(clipText);
-       localStorage.setItem("myCookie", clipText);
-     //document.getElementById("myInput").value = clipText;
-      
-    });
-    
-     });
-
-
-       ////////////////////////////
-function myPaste(name) {
-    
-    alert(localStorage.getItem("myCookie"));
-    
-}
-//////////////
-
-
-</script>
-
