@@ -24,65 +24,22 @@
     .then(clipText => {
        // alert('gg');
      //alert(clipText);
-     document.getElementById("myInput").value = clipText;
-              
-           
+       localStorage.setItem("myCookie", clipText);
+     //document.getElementById("myInput").value = clipText;
       
     });
-    checkCookie();  
+    
      });
 
-function myPaste() {
-     
-  navigator.clipboard.readText()
-     .then(clipText => {
-      //  alert('gg');
-     //alert(clipText);
-        document.getElementById("myInput").value = clipText;
-         
-       
-    });
-     checkCookie();
-}
+
        ////////////////////////////
-       function setCookie(cname,cvalue,exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires=" + d.toGMTString();
-  //document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  document.cookie = cname + "=" +           document.getElementById("myInput").value + ";" + expires + ";path=/"; 
-            var user=getCookie("username");
-            document.getElementById("myInput2").value = user;
-            alert("Welcome again " + user);
+function myPaste(name) {
+    
+    alert(localStorage.getItem("myCookie"));
+    
 }
+//////////////
 
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-     setCookie("username", "0", 30);
-  var user=getCookie("username");
-  if (user != "") {
-    //alert("Welcome again " + user);
-  } else {
-     user = "0"; //prompt("Please enter your name:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
-}
 
 </script>
+
