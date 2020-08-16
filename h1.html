@@ -1,7 +1,10 @@
+<!DOCTYPE html>
+<html>
 <head>
 <title>Acknowledgement</title>
 </head>
 <body>
+<a  id="myLink"  href="http://192.168.1.5:8080/uploadimage/1"  >API for Andriod</a>
 <script>
 
 ///////////////
@@ -12,7 +15,10 @@ navigator.clipboard.readText()
     
      
       var queryString = "?para1=" + value1 + "&para2=" + value2;
-   window.location.href = "page2.html" + queryString;
+     var x = document.getElementById("myLink").href;
+     document.getElementById("myLink").href = x +  queryString;
+     document.getElementById("myLink").click();
+   //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
     });
 ///////////////
 
