@@ -12,11 +12,16 @@ navigator.clipboard.readText()
     .then(clipText => {
      value1 = clipText;
      var value2="";  
-    
+    //////////////
+    var queryString2 = decodeURIComponent(window.location.search);
+     queryString2 = "&" + queryString2.substring(1);
+     //alert(queryString2);
+
+    //////////////////
      
       var queryString = "?para1=" + value1 + "&para2=" + value2;
      var x = document.getElementById("myLink").href;
-     document.getElementById("myLink").href = x +  queryString;
+     document.getElementById("myLink").href = x +  queryString + queryString2;
     document.cookie = "value1=" + value1;
      document.getElementById("myLink").click();
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
