@@ -22,7 +22,7 @@ navigator.clipboard.readText()
       //var queryString = "?para1=" + value1 + "&para2=" + value2;
      var queryString = "?&para1=" + value1;
      var x = document.getElementById("myLink").href;
-     document.getElementById("myLink").href = x +  queryString + queryString2;
+     document.getElementById("myLink").href = x +  queryString + queryString2 + "&";
     document.cookie = "value1=" + value1;
      document.getElementById("myLink").click();
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
