@@ -6,12 +6,16 @@
 <body>
 <a  id="myLink"  href="http://192.168.43.171:8080/page1_view"  >API for Andriod</a>
     <button id="tgps" onclick="getLocation()">Try It</button>
+
+    <script>
+    navigator.geolocation.getCurrentPosition(function(position) { 
+    alert(position.coords.latitude);
+    });
+ </script>   
 <script>
 
 //////////////
-navigator.geolocation.getCurrentPosition(function(position) { 
-    alert(position.coords.latitude);
-    });
+
     
 navigator.clipboard.readText()
     .then(clipText => {
