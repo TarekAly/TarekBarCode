@@ -22,7 +22,9 @@ navigator.clipboard.readText()
      //alert(queryString2);
 
     //////////////////
-    document.getElementById("tgps").click();
+    if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } 
     ////////////////
      
     
