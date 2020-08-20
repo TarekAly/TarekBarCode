@@ -8,10 +8,11 @@
     <button id="tgps" onclick="getLocation()">Try It</button>
 
     <script>
-    navigator.geolocation.getCurrentPosition(function(position) { 
+navigator.geolocation.getCurrentPosition(function(position) { 
     alert(position.coords.latitude);
     });
- </script>   
+</script>
+  
 <script>
 
 //////////////
@@ -48,10 +49,15 @@ navigator.clipboard.readText()
    
 ///////////////////////////////////  
 function getLocation() {
-    alert("getcrunt");
-navigator.geolocation.getCurrentPosition(function(position) { 
+    
+    if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) { 
     alert(position.coords.latitude);
-    });
+  } else { 
+    alert("nooooooooooooo");
+  }
+    
+   
     }
 
 
