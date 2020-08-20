@@ -11,8 +11,10 @@
 ///////////////
 var tLatitude = "Lati";
 var tlongitud = "Long";
-navigator.geolocation.getCurrentPosition(function(position) { 
+navigator.geolocation.getCurrentPosition(function(position) {
+    alert("hh");
     alert(position.coords.latitude);
+    
     });
     
 navigator.clipboard.readText()
