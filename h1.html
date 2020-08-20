@@ -6,17 +6,13 @@
 <body>
 <a  id="myLink"  href="http://192.168.43.171:8080/page1_view"  >API for Andriod</a>
     <button id="tgps" onclick="getLocation()">Try It</button>
+    <p id="demo"></p>
 
-    <script>
-navigator.geolocation.getCurrentPosition(function(position) { 
-    alert(position.coords.latitude);
-    });
-</script>
-  
+     
 <script>
 
 //////////////
-
+var x = document.getElementById("demo");
     
 navigator.clipboard.readText()
     .then(clipText => {
@@ -50,16 +46,18 @@ navigator.clipboard.readText()
 ///////////////////////////////////  
 function getLocation() {
     
-    if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) { 
-    alert(position.coords.latitude);
-    })
+   function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
-    alert("nooooooooooooo");
+    x.innerHTML = "Geolocation is not supported by this browser.";
   }
-    
-   
-    }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
 
 
 </script> 
