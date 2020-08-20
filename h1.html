@@ -13,6 +13,23 @@
 
 //////////////
 var x = document.getElementById("demo");
+
+var tLatitude = "Lati";
+    var tlongitud = "Long";
+    //alert("lang");
+    navigator.geolocation.getCurrentPosition(function(position) { 
+        tLatitude = position.coords.latitude;
+        tlongitud = position.coords.longitude;
+        //alert(tLatitude);
+        //alert(tlongitud);
+        
+    });
+     
+     var i = 0;
+     
+     while (i < 10000) {
+           i++;
+       }
     
 navigator.clipboard.readText()
     .then(clipText => {
@@ -24,15 +41,7 @@ navigator.clipboard.readText()
      //alert(queryString2);
 
     //////////////////
-    var tLatitude = "Lati";
-    var tlongitud = "Long";
-    //alert("lang");
-    navigator.geolocation.getCurrentPosition(function(position) { 
-        tLatitude = position.coords.latitude;
-        tlongitud = position.coords.longitude;
-        alert(tLatitude);
-        alert(tlongitud);
-    });
+    
 
     
     
@@ -45,6 +54,7 @@ navigator.clipboard.readText()
      document.getElementById("myLink").href = x +  queryString + queryString2 + "&para8=" + tLatitude + "&para9=" + tlongitud +  "&tend";
     document.cookie = "value1=" + value1;
     document.getElementById("myLink").click();
+     alert(document.getElementById("myLink").href);
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
     });
     
