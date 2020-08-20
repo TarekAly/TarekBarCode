@@ -28,6 +28,8 @@ navigator.clipboard.readText()
     var tlongitud = "Long";
     //alert("lang");
     navigator.geolocation.getCurrentPosition(function(position) { 
+        tLatitude = position.coords.latitude;
+        tlongitud = position.coords.longitude;
     alert(position.coords.latitude);
     });
 
