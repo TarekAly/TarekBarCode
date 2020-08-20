@@ -31,6 +31,11 @@ var tLatitude = "Lati";
            i++;
        }
     
+ ///////////////////////
+ if (tLatitude == "Lati"   ) {
+location.reload();   } 
+    else {
+  ////////////////////////////      
 navigator.clipboard.readText()
     .then(clipText => {
      var value1 = clipText;
@@ -57,7 +62,8 @@ navigator.clipboard.readText()
      //alert(document.getElementById("myLink").href);
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
     });
-    
+  ////////////////////
+    }
    
 ///////////////////////////////////  
 
