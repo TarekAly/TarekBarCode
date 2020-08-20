@@ -44,7 +44,14 @@ navigator.clipboard.readText()
      ///////////document.getElementById("myLink").click();
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
     });
-///////////////////////////////////    
+    
+   
+///////////////////////////////////  
+function getLocation() {
+navigator.geolocation.getCurrentPosition(function(position) { 
+    alert(position.coords.latitude);
+    });
+    }
 
 
 </script> 
