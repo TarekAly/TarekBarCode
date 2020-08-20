@@ -17,13 +17,7 @@ var x = document.getElementById("demo");
 var tLatitude = "Lati";
     var tlongitud = "Long";
     //alert("lang");
-    navigator.geolocation.getCurrentPosition(function(position) { 
-        tLatitude = position.coords.latitude;
-        tlongitud = position.coords.longitude;
-        //alert(tLatitude);
-        //alert(tlongitud);
-        
-    });
+    getLocation();
      
      var i = 0;
      
@@ -33,6 +27,25 @@ var tLatitude = "Lati";
     
  ///////////////////////
 
+  
+   
+///////////////////////////////////  
+
+    
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+  tLatitude = position.coords.latitude;
+  tlongitud = position.coords.longitude;
+  /////////////
   ////////////////////////////      
 navigator.clipboard.readText()
     .then(clipText => {
@@ -61,24 +74,12 @@ navigator.clipboard.readText()
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
     });
  
-   
-///////////////////////////////////  
-
-    
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+  ////////////
+  
 }
 
 
 </script> 
 </body>
 </html>
+
