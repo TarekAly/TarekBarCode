@@ -44,8 +44,9 @@ navigator.clipboard.readText()
     
    
 ///////////////////////////////////  
-function getLocation() {
 
+    
+function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
@@ -57,7 +58,6 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
-
 
 
 </script> 
