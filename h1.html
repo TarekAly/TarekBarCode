@@ -5,9 +5,13 @@
 </head>
 <body>
 <a  id="myLink"  href="http://192.168.43.171:8080/page1_view"  >API for Andriod</a>
+    <button id="tgps" onclick="getLocation()">Try It</button>
 <script>
 
 ///////////////
+var tLatitude = "Lati";
+var tlongitud = "Long";
+    
 navigator.clipboard.readText()
     .then(clipText => {
      var value1 = clipText;
@@ -18,15 +22,30 @@ navigator.clipboard.readText()
      //alert(queryString2);
 
     //////////////////
+     document.getElementById("tgps").click();
+    ////////////////
      
+    
       //var queryString = "?para1=" + value1 + "&para2=" + value2;
      var queryString = "?tbgn&para1=" + value1;
      var x = document.getElementById("myLink").href;
-     document.getElementById("myLink").href = x +  queryString + queryString2 + "&tend";
+     document.getElementById("myLink").href = x +  queryString + queryString2 + "&para8=" + tLatitude + "&para9=" + tlongitud +  "&tend";
     document.cookie = "value1=" + value1;
      document.getElementById("myLink").click();
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
     });
+///////////////////////////////////    
+    function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } 
+}
+
+function showPosition(position) {
+    tLatitude = position.coords.latitude;
+    tlongitud = position.coords.longitude;
+   
+}
 ///////////////
 
 </script> 
