@@ -23,7 +23,9 @@ navigator.clipboard.readText()
     //////////////////
     var tLatitude = "Lati";
     var tlongitud = "Long";
-    alert("hh");
+    navigator.geolocation.getCurrentPosition(function(position) { 
+    alert(position.coords.latitude);
+    });
     
     ////////////////
      
