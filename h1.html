@@ -11,6 +11,9 @@
 ///////////////
 var tLatitude = "Lati";
 var tlongitud = "Long";
+    navigator.geolocation.getCurrentPosition(function(position) { 
+    alert(position.coords.latitude);
+    });
     
 navigator.clipboard.readText()
     .then(clipText => {
@@ -22,11 +25,7 @@ navigator.clipboard.readText()
      //alert(queryString2);
 
     //////////////////
-    if (navigator.geolocation) {
-        alert("ooo");
-    navigator.geolocation.getCurrentPosition(showPosition);
-        alert("&para8=" + tLatitude + "&para9=" + tlongitud );
-  } 
+    
     ////////////////
      
     
@@ -39,18 +38,7 @@ navigator.clipboard.readText()
    //window.location.href = "http://192.168.1.5:8080/uploadimage" + queryString;
     });
 ///////////////////////////////////    
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } 
-}
 
-function showPosition(position) {
-    tLatitude = position.coords.latitude;
-    tlongitud = position.coords.longitude;
-   
-}
-///////////////
 
 </script> 
 </body>
